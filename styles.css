@@ -1,0 +1,211 @@
+/* Neon Theme for Centural Game Studio */
+:root {
+    /* @tweakable primary neon color */
+    --neon-primary: #00f3ff;
+    /* @tweakable secondary neon color */
+    --neon-secondary: #ff00ff;
+    /* @tweakable background color */
+    --bg-dark: #0a0a14;
+    /* @tweakable dark panel color */
+    --panel-dark: #12121e;
+    --text-light: #ffffff;
+    --text-dim: #a0a0b8;
+    --success: #00ff66;
+    --warning: #ffcc00;
+    --danger: #ff3366;
+    --font-main: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+#app {
+    min-height: 100vh;
+}
+
+/* Neon effects */
+.neon-text {
+    color: var(--text-light);
+    text-shadow: 0 0 5px var(--neon-primary),
+                0 0 10px var(--neon-primary),
+                0 0 20px var(--neon-primary);
+}
+
+.neon-border {
+    border: 2px solid var(--neon-primary);
+    box-shadow: 0 0 5px var(--neon-primary),
+               0 0 10px var(--neon-primary);
+}
+
+.neon-button {
+    background-color: transparent;
+    border: 2px solid var(--neon-primary);
+    color: var(--neon-primary);
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.neon-button:hover {
+    background-color: var(--neon-primary);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--neon-primary);
+}
+
+.neon-input {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--neon-primary);
+    color: var(--text-light);
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.neon-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--neon-primary);
+}
+
+/* Layout components */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.panel {
+    background-color: var(--panel-dark);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    border-left: 3px solid var(--neon-primary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-dim);
+}
+
+/* Card styles */
+.card {
+    background-color: var(--panel-dark);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Status indicators */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background-color: rgba(255, 204, 0, 0.2);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+}
+
+.status-approved {
+    background-color: rgba(0, 255, 102, 0.2);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+.status-archived {
+    background-color: rgba(255, 51, 102, 0.2);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+/* Animation keyframes */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .header nav {
+        margin-top: 1rem;
+        width: 100%;
+    }
+}
